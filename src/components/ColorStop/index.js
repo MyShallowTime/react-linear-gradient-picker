@@ -26,7 +26,8 @@ const ColorStop = ({ stop, limits, onPosChange, onDeleteColor, onDragStart = noo
 			<div className="content" style={{ backgroundColor: color }}
 				onMouseDown={drag}
 				onTouchStart={drag}/>
-			<div className="delete" onClick={() => {
+			<div className="delete" onMouseDown={(evt) => {
+				evt.stopPropagation();
 				onDeleteColor(stop.id);
 			}}> x </div>
 		</div>
