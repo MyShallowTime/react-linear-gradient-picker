@@ -21,10 +21,14 @@ const ColorStop = ({ stop, limits, onPosChange, onDeleteColor, onDragStart = noo
 	return (
 		<div className={isActive ? 'cs active' : 'cs'}
 			ref={colorStopRef}
-			style={{ left: offset }}
-			onMouseDown={drag}
-			onTouchStart={drag}>
-			<div style={{ backgroundColor: color }}/>
+			style={{ left: offset }}>
+			<div className="arrow"></div>
+			<div className="content" style={{ backgroundColor: color }}
+				onMouseDown={drag}
+				onTouchStart={drag}/>
+			<div className="delete" onClick={() => {
+				onDeleteColor(stop.id);
+			}}> x </div>
 		</div>
 	);
 };
