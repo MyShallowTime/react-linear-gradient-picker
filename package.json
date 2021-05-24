@@ -1,13 +1,14 @@
 {
   "name": "@ispeco/react-linear-gradient-picker",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "React linear gradient picker",
   "main": "dist/index.js",
   "scripts": {
     "storybook": "start-storybook -p 7006",
     "lint": "eslint .",
     "build": "webpack --config ./webpack.config.js",
-    "deploy-storybook": "storybook-to-ghpages"
+    "deploy-storybook": "storybook-to-ghpages",
+    "build:publish": "npm run build && npm publish"
   },
   "keywords": [
     "gradient-picker",

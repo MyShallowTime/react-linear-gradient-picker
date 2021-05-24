@@ -1,27 +1,22 @@
-import React, { useRef } from 'react';
+import React from 'react';
 import { noop } from '../../lib';
 import { STOP_PROP_TYPES } from '../propTypes';
 import useStopDragging from './hooks/useStopDragging';
 import './index.css';
 
 const ColorStop = ({ stop, limits, onPosChange, onDeleteColor, onDragStart = noop, onDragEnd = noop}) => {
-	const colorStopRef = useRef();
 	const [drag] = useStopDragging({
 		stop,
 		limits,
 		onPosChange,
 		onDragStart,
-		onDragEnd,
-		onDeleteColor,
-		colorStopRef
+		onDragEnd
 	});
 
 	const { offset, color, isActive } = stop;
 
 	return (
-		<div className={isActive ? 'cs active' : 'cs'}
-			ref={colorStopRef}
-			style={{ left: offset }}>
+		<div className={isActive ? 'cs active' : 'cs'} style={{ left: offset }}>
 			<div className="arrow"></div>
 			<div className="content" style={{ backgroundColor: color }}
 				onMouseDown={drag}
