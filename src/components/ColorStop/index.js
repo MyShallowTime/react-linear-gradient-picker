@@ -24,7 +24,7 @@ const ColorStop = ({ stop, limits, onPosChange, onDeleteColor, onDragStart = noo
 			<div className="delete" onMouseDown={(evt) => {
 				evt.stopPropagation();
 				onDeleteColor(stop.id);
-			}}> x </div>
+			}}>x</div>
 		</div>
 	);
 };
